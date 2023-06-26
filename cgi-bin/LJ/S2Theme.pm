@@ -73,6 +73,7 @@ sub default_themes {
         paperme          => 'paperme/newleaf',
         patsy            => 'patsy/retro',
         pattern          => 'pattern/foundinthedesert',
+        petal            => 'petal/tenthousandyearsakura',
         planetcaravan    => 'planetcaravan/cheerfully',
         practicality     => 'practicality/warmth',
         refriedtablet    => 'refriedtablet/refriedclassic',
