@@ -368,11 +368,11 @@ sub html_text {
     if ( $opts->{'raw'} ) { $ret .= " $opts->{'raw'}"; }
     $ret .= "$disabled />";
     $ret .= <<EOF if $opts->{type} eq 'password';
-        <span class=\"toggle-show\">
+        <span class="toggle-show">
             <button
-                type=\"button\"
-                class=\"toggle-show-link\"
-                onclick=\"let curstate=this.parentElement.previousElementSibling.getAttribute('type');this.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');\"
+                type="button"
+                class="toggle-show-link"
+                onclick="let curstate=this.parentElement.previousElementSibling.getAttribute('type');this.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');"
             >
                 Show Password
             </button>

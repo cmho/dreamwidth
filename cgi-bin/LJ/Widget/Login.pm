@@ -96,7 +96,20 @@ sub render_body {
             . LJ::Lang::ml('/login.bml.login.password')
             . "</label>\n";
         $ret .=
-"<input type='password' id='lj_loginwidget_password' name='password' class='lj_login_password text' size='20' maxlength='$LJ::PASSWORD_MAXLENGTH' tabindex='12' /><a href='$LJ::SITEROOT/lostinfo' class='small-link' tabindex='16'>"
+"<input type='password' id='lj_loginwidget_password' name='password' class='lj_login_password text' size='20' maxlength='$LJ::PASSWORD_MAXLENGTH' tabindex='12' />";
+        $ret .= <<EOF;
+            <span>
+                <span class="toggle-show">
+                <button
+                    type="button"
+                    class="toggle-show-link"
+                    onclick="let curstate=this.parentElement.previousElementSibling.getAttribute('type');this.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');"
+                >
+                    Show Password
+                </button>
+            </span>
+EOF
+        $ret .= "<a href='$LJ::SITEROOT/lostinfo' class='small-link' tabindex='16'></span>"
             . LJ::Lang::ml('/login.bml.login.forget2')
             . "</a>\n";
         $ret .= "</fieldset>\n";
