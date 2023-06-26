@@ -100,18 +100,18 @@ sub render_body {
         $ret .= <<EOF;
             <span>
                 <span class="toggle-show">
-                <button
-                    type="button"
-                    class="toggle-show-link"
-                    onclick="let curstate=this.parentElement.parentElement.previousElementSibling.getAttribute('type');this.parentElement.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');"
-                >
-                    Show Password
-                </button>
-            </span>
+                    <button
+                        type="button"
+                        class="toggle-show-link"
+                        onclick="let curstate=this.parentElement.parentElement.previousElementSibling.getAttribute('type');this.parentElement.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');"
+                    >
+                        Show Password
+                    </button>
+                </span>
 EOF
-        $ret .= "<a href='$LJ::SITEROOT/lostinfo' class='small-link' tabindex='16'></span>"
+        $ret .= "<a href='$LJ::SITEROOT/lostinfo' class='small-link' tabindex='16'>"
             . LJ::Lang::ml('/login.bml.login.forget2')
-            . "</a>\n";
+            . "</a></span>\n";
         $ret .= "</fieldset>\n";
         $ret .=
 "<p><input type='checkbox' name='remember_me' id='remember_me' value='1' tabindex='13' /> <label for='remember_me'>Remember me</label></p>";
