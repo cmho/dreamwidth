@@ -567,6 +567,12 @@ sub start_request {
                 )
         );
 
+        LJ::need_res(
+            { priority => $LJ::LIB_RES_PRIORITY, qw (
+                css/components/toggle-password.css
+            )}
+        )
+
         # esn ajax
         LJ::need_res(
             { priority => $LJ::LIB_RES_PRIORITY }, qw(
