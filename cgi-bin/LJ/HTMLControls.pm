@@ -359,7 +359,7 @@ sub html_text {
         && ( $opts->{type} eq 'password'
         || $opts->{type} eq 'search' );
     my $ret = '';
-    $ret .= "<div class\"password-wrapper\">" if $opts->{type} eq 'password';
+    $ret .= "<div class=\"password-wrapper\">" if $opts->{type} eq 'password';
     $ret .= "<input type=\"$type\"";
     foreach ( grep { !/^(type|disabled|raw|noescape)$/ } keys %$opts ) {
         my $val = defined $opts->{$_} ? $opts->{$_} : '';
