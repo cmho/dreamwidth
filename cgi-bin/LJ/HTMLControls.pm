@@ -370,13 +370,13 @@ sub html_text {
     if ($type == "password") {
         $ret .= <<EOF;
             <span class\"toggle-show\">
-                <a
-                    href=\"#\"
+                <button
+                    type=\"button\"
                     class=\"toggle-show-link\"
                     onclick=\"let curstate=this.parentElement.previousSibling.getAttribute('type');this.parentElement.previousSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');\"
                 >
                     Show Password
-                </a>
+                </button>
             </span>
 EOF
     }
