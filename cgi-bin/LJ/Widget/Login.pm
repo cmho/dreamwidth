@@ -103,7 +103,7 @@ sub render_body {
                 <button
                     type="button"
                     class="toggle-show-link"
-                    onclick="let curstate=this.parentElement.previousElementSibling.getAttribute('type');this.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');"
+                    onclick="let curstate=this.parentElement.parentElement.previousElementSibling.getAttribute('type');this.parentElement.parentElement.previousElementSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');"
                 >
                     Show Password
                 </button>
