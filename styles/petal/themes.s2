@@ -1,0 +1,72 @@
+#NEWLAYER: petal/tenthousandyearsakura
+layerinfo type = "theme";
+layerinfo name = "Ten Thousand Year Sakura";
+layerinfo redist_uniq = "pattern/tenthousandyearsakura";
+layerinfo author_name = "veryroundbird";
+
+set layout_resources = [
+    { "name" => "Subtle Patterns", "url" => "http://subtlepatterns.com/" },
+    { "name" => "Guilherme Simoes", "url" => "https://thenounproject.com/" },
+    { "name" => "Nicolas Vicent", "url" => "https://thenounproject.com/" }
+];
+
+##===============================
+## Settings
+##===============================
+
+set layout_type = "two-columns-left";
+set sidebar_width = "400px";
+set sidebar_width_doubled = "800px";
+set content_margins = 15;
+set module_subscriptionfilters_section = "one";
+set module_active_section = "two";
+set module_links_section = "two";
+set module_tags_section = "one";
+set module_pagesummary_section = "two";
+set module_time_section = "one";
+
+##===============================
+## Page Colors
+##===============================
+
+set color_page_background = "#FFF";
+set color_accent = "";
+set color_page_link = "#a4a4a4";
+set color_page_link_active = "#e40045";
+set color_page_link_hover = "#e40045";
+set color_page_link_visited = "#a4a4a4";
+set color_page_text = "#fefefe";
+
+##===============================
+## Images
+##===============================
+
+set image_background_page_url = "pattern/alwaysontheball_bkg.png";
+set image_background_subject_height = 64;
+set image_background_subject_url = "pattern/alwaysontheball_subj.png";
+set image_background_subject_width = 64;
+set image_background_tags_height = 24;
+set image_background_tags_url = "pattern/alwaysontheball_tags.png";
+set image_background_tags_width = 32;
+
+##===============================
+## Stylesheet
+##===============================
+
+function Page::print_theme_stylesheet() {
+"""
+#header {
+    background: linear-gradient(top, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+    background: -moz-linear-gradient(top, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+    background: -o-linear-gradient(top, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+    background: -webkit-linear-gradient(top, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+}
+
+#footer {
+    background: linear-gradient(bottom, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+    background: -moz-linear-gradient(bottom, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+    background: -o-linear-gradient(bottom, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+    background: -webkit-linear-gradient(bottom, rgba(245,86,134,1) 0%, rgba(36,29,31,.3) 100%);
+}
+""";
+}

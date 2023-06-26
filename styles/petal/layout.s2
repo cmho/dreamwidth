@@ -1,0 +1,463 @@
+layerinfo type = "layout";
+layerinfo name = "Petal";
+layerinfo author_name = "veryroundbird";
+layerinfo redist_uniq = "petal/layout";
+layerinfo lang = "en";
+
+set layout_authors = [ { "name" => "veryroundbird", "type" => "user" } ];
+
+##===============================
+## Presentation
+##===============================
+
+set layout_type = "two-columns-left";
+set userpics_position = "right";
+
+##===============================
+## Colors
+##===============================
+
+propgroup colors_child {
+    property use color_accent;
+    property use color_header_link;
+    property use color_header_link_active;
+    property use color_header_link_hover;
+    property use color_header_link_visited;
+}
+
+##===============================
+## Fonts
+##===============================
+
+set font_base = "Work Sans";
+set font_fallback = "sans-serif";
+
+##===============================
+## Stylesheet
+##===============================
+
+function print_stylesheet () {
+    var string medium_media_query = generate_medium_media_query();
+
+    var string entry_title_font = generate_font_css($*font_entry_title, $*font_base, $*font_fallback, $*font_entry_title_size, $*font_entry_title_units);
+
+var string userpic_css = "";
+    if ($*userpics_position == "left") {
+        $userpic_css = ".entry .userpic,
+        .comment .userpic { float: left;
+            margin-left: 0 !important; }
+
+        .entry .header,
+        .comment .header { text-align: right; }
+        .entry-title,
+        .comment-title { text-align: left; }";
+    }
+    elseif ($*userpics_position == "right") {
+        $userpic_css = ".entry .userpic,
+        .comment .userpic { float: right; }";
+    }
+
+"""
+
+#content {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+#content .ljuser a {
+  font-style: italic;
+  text-decoration: none;
+}
+
+.content .ljuser b {
+  font-weight: normal;
+}
+
+.entry {
+  line-height: 1.4;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.entry .entry-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  font-size: 20px;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.entry .entry-title:after {
+  content: \"\";
+  height: 1px;
+  display: block;
+  background-color: pink;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.entry .entry-title a {
+  color: #111;
+  text-decoration: none;
+}
+
+.entry .entry-title .sticky-entry-icon img {
+  display: none;
+}
+
+.entry .entry-title > * {
+  display: none;
+}
+
+.entry .entry-title a {
+  display: block;
+}
+
+.entry .userpic {
+  position: absolute;
+  top: 0;
+  left: calc(100% + 40px);
+  transform: translateY(calc(-50% + 20px));
+  width: 60px;
+  height: 60px;
+}
+
+.entry .userpic img {
+  background-color: white;
+  border: 1px #DDD solid;
+  padding: 3px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.entry .entry-poster {
+  position: absolute;
+  left: calc(100% + 70px);
+  transform: translateX(-50%);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.entry .entry-poster b {
+  font-weight: normal;
+}
+
+.entry .entry-poster a {
+  text-decoration: none;
+}
+
+.entry .entry-poster img {
+  width: 12px;
+  height: 12px;
+}
+
+.entry .datetime {
+  display: block;
+  margin: -10px 0 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.entry .datetime a {
+  text-decoration: none;
+  color: #111;
+}
+
+.entry .cuttag + b {
+  text-indent: -999px;
+  overflow: hidden;
+  display: inline-flex;
+  font-style: italic;
+  font-weight: normal;
+  text-transform: lowercase;
+}
+
+.entry .cuttag + b a {
+  text-indent: 0;
+  display: block;
+  text-decoration: none;
+}
+
+.entry hr {
+  background-color: pink;
+  height: 1px;
+  border: none;
+  max-width: 300px;
+  margin: 30px auto;
+}
+
+.entry .footer .tag {
+  margin-top: 20px;
+}
+
+.entry .footer .tag .tag-text {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  text-indent: -500px;
+}
+
+.entry .footer .tag ul li a {
+  text-decoration: none;
+}
+
+.entry .footer .tag ul li a:before {
+  content: \"#\";
+  color: pink;
+}
+
+ul.entry-interaction-links {
+  margin: 0;
+  padding: 0;
+}
+
+ul.entry-interaction-links li {
+  margin-right: 20px;
+}
+
+ul.entry-interaction-links li:last-child {
+  margin-right: 0;
+}
+
+ul.entry-interaction-links li a {
+  text-transform: lowercase;
+  font-size: 14px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+ul.entry-interaction-links li a:before {
+  content: \"\";
+  width: 75px;
+  height: 1px;
+  background-color: pink;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+#secondary {
+  width: 400px;
+  font-size: 14px;
+  margin-top: 100px;
+}
+
+.journal-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+h2.module-header {
+  font-weight: normal;
+  font-style: italic;
+  text-transform: lowercase;
+}
+
+h2.module-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.module-customtext img {
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+  border: 1px #DDD solid;
+  box-sizing: border-box;
+}
+
+.module-customtext p {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.module-userprofile .userpic {
+  display: none;
+}
+
+.module-userprofile h2,
+.userlite-interaction-links.icon-links {
+  display: none;
+}
+
+.module-navlinks ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  font-size: 12px;
+  text-transform: lowercase;
+}
+
+.module-navlinks ul li:before {
+  content: \"\";
+  width: 30px;
+  height: 1px;
+  background-color: pink;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+  color: pink;
+}
+
+.module-navlinks ul li.list-item-read,
+.module-navlinks ul li.list-item-memories {
+  display: none;
+}
+
+.module-navlinks ul li {
+  margin-right: 10px;
+}
+
+.module-navlinks ul li:last-child {
+  margin-right: 0;
+}
+
+.module-navlinks ul li a {
+  text-decoration: none;
+  font-style: italic;
+}
+
+.module-typelist h2 {
+  display: none;
+}
+
+.module-typelist .module-list {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.module-typelist .module-list li {
+  margin: 0 5px;
+}
+
+.module-typelist .module-list li a {
+  text-decoration: none;
+  background-color: pink;
+  color: #666;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.module-typelist .manage-link {
+  display: none;
+}
+
+.navigation .page-back,
+.navigation .page-forward {
+  font-size: 14px;
+  text-transform: lowercase;
+  font-style: italic;
+}
+
+.navigation .page-back {
+  float: left;
+}
+
+.navigation .page-forward {
+  float: right;
+}
+
+.navigation .page-separator {
+  display: none;
+
+}
+
+.navigation ul:after {
+  content: \"\";
+  display: block;
+  clear: both;
+}
+
+.navigation .page-back a,
+.navigation .page-forward a {
+  text-decoration: none;
+  color: #666;
+}
+
+.navigation .page-back a:before,
+.navigation .page-forward a:after {
+  content: \"\";
+  width: 75px;
+  height: 1px;
+  background-color: pink;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.navigation .page-back a:before {
+  margin-right: 5px;
+}
+
+.navigation .page-forward a:after {
+  margin-left: 5px;
+}
+
+#footer {
+  text-align: center;
+  margin: 20px;
+}
+
+#footer .page-top a {
+  text-decoration: none;
+  background-color: pink;
+  color: #666;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: lowercase;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1200px) {
+  #content > .inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #secondary {
+    position: static;
+    order: 1;
+    margin: 0 auto;
+  }
+
+  #primary {
+    order: 2;
+    margin-right: 0;
+  }
+
+  .entry .userpic {
+    position: static;
+    float: right;
+    margin: 0 20px 10px;
+    transform: translate(0);
+  }
+
+  .entry .entry-poster {
+    position: static;
+    float: right;
+    clear: right;
+    transform: translate(0);
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+  }
+}
+
+""";
+}
