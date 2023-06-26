@@ -373,7 +373,7 @@ sub html_text {
                 <a
                     href=\"#\"
                     class=\"toggle-show-link\"
-                    onclick=\"let curstate=this.parent.previousSibling.getAttribute('type');this.parent.previousSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');\"
+                    onclick=\"let curstate=this.parentElement.previousSibling.getAttribute('type');this.parentElement.previousSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');\"
                 >
                     Show Password
                 </a>
