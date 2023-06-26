@@ -359,6 +359,7 @@ sub html_text {
         && ( $opts->{type} eq 'password'
         || $opts->{type} eq 'search' );
     my $ret = '';
+    $ret .= "<div class\"password-wrapper\">" if $opts->{type} eq 'password';
     $ret .= "<input type=\"$type\"";
     foreach ( grep { !/^(type|disabled|raw|noescape)$/ } keys %$opts ) {
         my $val = defined $opts->{$_} ? $opts->{$_} : '';
@@ -366,6 +367,18 @@ sub html_text {
     }
     if ( $opts->{'raw'} ) { $ret .= " $opts->{'raw'}"; }
     $ret .= "$disabled />";
+    $ret .= <<EOF;
+        <span class\"toggle-show\">
+            <a
+                href=\"#\"
+                class=\"toggle-show-link\"
+                onclick=\"let curstate=this.parent.previousSibling.getAttribute('type');this.parent.previousSibling.setAttribute('type', curstate == 'password' ? 'text' : 'password');this.textContent=(curstate == 'password' ? 'Hide password?' : 'Show password?');\"
+            >
+                Show Password
+            </a>
+        </span>
+EOF
+    $ret .= "</div>" if $opts->{type} eq 'password';
     return $ret;
 }
 

@@ -61,6 +61,10 @@
 
 .login.password=Password
 
+.login.showpassword=Show Password
+
+.login.hidepassword=Hide Password
+
 .login.remember=Remember me
 
 .login.secure=Secure
@@ -74,4 +78,3 @@
 .login.welcome=Welcome to [[sitename]]!
 
 .logout.btn1=Log out
-
