@@ -33,11 +33,13 @@ LJ::Hooks::register_hook(
             'tropo-common' => { parent => 'common',       internal => 1 },
             'tropo-purple' => { parent => 'tropo-common', title    => "Tropospherical Purple" },
             'tropo-red'    => { parent => 'tropo-common', title    => "Tropospherical Red" },
+            'tropo-softera' => { parent => 'tropo-common', title => "Tropospherical Soft Era"}
         );
 
         @{$schemes} = (
             { scheme => "tropo-red" },
             { scheme => "tropo-purple" },
+            { scheme => "tropo-softera" },
             {
                 scheme => "celerity-local",
                 alt    => 'siteskins.celerity.alt',
