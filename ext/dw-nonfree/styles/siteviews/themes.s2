@@ -18,3 +18,12 @@ function Page::print_theme_stylesheet() {
     $*SITEVIEWS->need_res( {"group" => "jquery"}, "stc/siteviews/tropo-purple.css" );
 }
 
+#NEWLAYER: siteviews/tropo-softera
+layerinfo type = "theme";
+layerinfo name = "Tropospherical Soft Era";
+layerinfo redist_uniq = "siteviews/tropo-softera";
+
+function Page::print_theme_stylesheet() {
+    # Do not actually *print* any stylesheets here, but you can $*SITEVIEWS->need_res(...); here to pull in anything.
+    $*SITEVIEWS->need_res( {"group" => "jquery"}, "stc/siteviews/tropo-softera.css" );
+}
