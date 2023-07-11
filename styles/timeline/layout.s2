@@ -485,7 +485,7 @@ propgroup modules {
 }
 
 # Explicitly define what sections the layout has available
-set module_layout_sections = "none|(none)|one|Header|two|Main Module Section|three|Secondary Module Section";
+set module_layout_sections = "none|(none)|one|Main Module Section|two|Secondary Module Section";
 
 set grouped_property_override = {
 
