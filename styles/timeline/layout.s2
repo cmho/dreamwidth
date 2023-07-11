@@ -323,38 +323,31 @@ propgroup fonts {
     property use font_sources;
 }
 
-set font_sources = "https://fonts.googleapis.com/css?family=Sofia";
+set font_sources = "https://fonts.googleapis.com/css?family=Lato:300,400,700,900";
 
-set font_base = "'Times New Roman', Times";
-set font_fallback = "serif";
+set font_base = "Lato, sans-serif";
+set font_fallback = "sans-serif";
 set font_base_size = "1";
 set font_base_units = "em";
 
-set font_journal_title = "Sofia, Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_journal_title_size = "1.375";
+set font_journal_title_size = "1.25";
 set font_journal_title_units = "em";
 
-set font_journal_subtitle = "Sofia, Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_journal_subtitle_size = "1.12";
+set font_journal_subtitle_size = "1";
 set font_journal_subtitle_units = "em";
 
-set font_journal_pagetitle = "Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_journal_pagetitle_size = "1.12";
+set font_journal_pagetitle_size = "1";
 set font_journal_pagetitle_units = "em";
 
-set font_entry_title = "Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_entry_title_size = "1.5";
+set font_entry_title_size = "1";
 set font_entry_title_units = "em";
 
-set font_entry_datetime = "Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_entry_datetime_size = ".75";
+set font_entry_datetime_size = "1";
 set font_entry_datetime_units = "em";
 
-set font_comment_title = "Palatino, 'Palatino Linotype', 'Times New Roman', Times";
 set font_comment_title_size = "1";
 set font_comment_title_units = "em";
 
-set font_module_heading = "Palatino, 'Palatino Linotype', 'Times New Roman', Times";
 set font_module_heading_size = "1";
 set font_module_heading_units = "em";
 
@@ -366,12 +359,10 @@ set font_module_management = "sans-serif";
 set font_module_management_size = ".625";
 set font_module_management_units = "em";
 
-set font_navigation = "Sofia, Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_navigation_size = "1.375";
+set font_navigation_size = "1";
 set font_navigation_units = "em";
 
-set font_linkslist = "Palatino, 'Palatino Linotype', 'Times New Roman', Times";
-set font_linkslist_size = "1.12";
+set font_linkslist_size = "1";
 set font_linkslist_units = "em";
 
 ##===============================
@@ -1127,8 +1118,25 @@ function Page::print_default_stylesheet() {
 
     """
 body {
-  font-family: sans-serif;
-  font-size: 15px;
+  $page_font
+  $page_background
+  $page_colors
+}
+
+a, a:link {
+  $page_link_colors
+}
+
+a:visited {
+  $page_link_visited_colors
+}
+
+a:active {
+  $page_link_active_colors
+}
+
+a:hover {
+  $page_link_hover_colors
 }
 
 #canvas {
@@ -1137,6 +1145,7 @@ body {
   margin: 0 auto;
   border-left: 1px #000 solid;
   border-right: 1px #000 solid;
+  $canvas_background
 }
 
 #header {
