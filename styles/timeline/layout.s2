@@ -1169,7 +1169,6 @@ a:hover {
 }
 
 h1#title {
-  font-size: 1.5em;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -1178,23 +1177,25 @@ h1#title {
 
 h2#subtitle,
 h2#pagetitle {
-  font-size: 1em; 
   font-weight: normal;
   margin: 0;
-  opacity: .6;
   padding: 0;
 }
 
 h2#pagetitle {
+  $page_title_font
+  $page_title_colors
   order: 2;
 }
 
 h2#subtitle {
+  $page_subtitle_font
   order: 3;
   width: 100%;
 }
 
 #primary {
+  width: $primary_width_size$primary_width_units;
   border-top: 1px #000 solid;
   padding-top: 20px;
 }
@@ -1204,7 +1205,7 @@ h2#subtitle {
 }
 
 .entry {
-  border-bottom: 1px #000 solid;
+  border-bottom: 1px $color_entry_border solid;
   position: relative;
   padding: 20px;
   padding-left: 70px;
