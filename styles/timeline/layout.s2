@@ -1195,7 +1195,7 @@ h2#subtitle {
 }
 
 #primary {
-  width: $primary_width_size$primary_width_units;
+  width: $*primary_width_size$*primary_width_units;
   border-top: 1px #000 solid;
   padding-top: 20px;
 }
