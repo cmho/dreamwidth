@@ -1140,7 +1140,7 @@ a:hover {
 }
 
 #canvas {
-  width: 600px;
+  width: $*primary_width_size$*primary_width_units;
   max-width: 100%;
   margin: 0 auto;
   border-left: 1px #000 solid;
@@ -1149,6 +1149,7 @@ a:hover {
 }
 
 #header {
+  $header_background
   height: 60px;
   padding-bottom: 33%;
   background-position: 0 60px;
@@ -1169,6 +1170,7 @@ a:hover {
 }
 
 h1#title {
+  $page_title_colors
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -1195,7 +1197,7 @@ h2#subtitle {
 }
 
 #primary {
-  width: $*primary_width_size$*primary_width_units;
+  width: 100%;
   border-top: 1px #000 solid;
   padding-top: 20px;
 }
@@ -1259,6 +1261,10 @@ h2#subtitle {
   width: calc(100% + 60px);
   transform: translateX(-55px);
   margin-top: 1em;
+}
+
+.module-section-two {
+  padding: 20px;
 }
 
 .module-section-two > .inner {
