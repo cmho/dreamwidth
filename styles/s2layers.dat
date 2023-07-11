@@ -36,6 +36,9 @@ negatives/themes         theme+                      negatives/layout
 skittlishdreams/layout   layout                      core2
 skittlishdreams/themes   theme+                      skittlishdreams/layout
 
+timeline/layout          layout                      core2
+timeline/themes          theme+                      timeline/layout
+
 venture/layout           layout                      core2
 venture/themes           theme+                      venture/layout
 

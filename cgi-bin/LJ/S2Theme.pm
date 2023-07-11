@@ -83,6 +83,7 @@ sub default_themes {
         strata           => 'strata/springmorning',
         summertime       => 'summertime/tenniscourt',
         tectonic         => 'tectonic/fission',
+        timeline         => 'timeline/darkmode',
         tranquilityiii   => 'tranquilityiii/nightsea',
         trifecta         => 'trifecta/handlewithcare',
         wideopen         => 'wideopen/koi',
