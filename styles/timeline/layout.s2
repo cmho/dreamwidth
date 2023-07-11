@@ -1143,8 +1143,8 @@ a:hover {
   width: $*primary_width_size$*primary_width_units;
   max-width: 100%;
   margin: 0 auto;
-  border-left: 1px #000 solid;
-  border-right: 1px #000 solid;
+  border-left: 1px $*color_page_border solid;
+  border-right: 1px $*color_page_border solid;
   $canvas_background
 }
 
@@ -1211,7 +1211,7 @@ h2#subtitle {
 #primary {
   width: 100%;
   border-top: 1px #000 solid;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 #primary > .inner:first-child {
@@ -1221,9 +1221,9 @@ h2#subtitle {
 .entry {
   border-bottom: 1px $*color_entry_border solid;
   position: relative;
-  padding: 20px;
+  padding: 10px;
   padding-left: 70px;
-  padding-top: calc(1.4em + 20px);
+  padding-top: calc(1.4em + 10px);
   position: relative;
 }
 
@@ -1237,7 +1237,7 @@ h2#subtitle {
   opacity: .6;
   position: absolute;
   top: 1.4em;
-  right: 20px;
+  right: 10px;
 }
 
 .entry h3 {
@@ -1254,13 +1254,13 @@ h2#subtitle {
   overflow: hidden;
   position: absolute;
   top: 1.4em;
-  left: 20px;
+  left: 10px;
 }
 
 .entry .poster {
   position: absolute;
   top: 1.4em;
-  left: 70px;
+  left: 60px;
 }
 
 .entry .userpic img {
@@ -1273,6 +1273,13 @@ h2#subtitle {
   width: calc(100% + 60px);
   transform: translateX(-55px);
   margin-top: 1em;
+}
+
+.userlite-interaction-links {
+  display: inline-flex;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
 }
 
 .module-section-one,
@@ -1292,10 +1299,18 @@ h2#subtitle {
 .module-section-header .module-navlinks {
   position: absolute;
   top: 100%;
-  right: 20px;
+  right: 10px;
   z-index: 9;
   max-width: calc(100% - 140px);
   text-align: right;
+}
+
+.module-section-one .module-navlinks,
+.module-section-two .module-navlinks {
+  display: inline-flex;
+  list-style: none;
+  gap: 10px;
+  padding: 0;
 }
 
 .module-section-header .module-navlinks .module-content li {
