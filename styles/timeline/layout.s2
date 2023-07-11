@@ -1149,13 +1149,18 @@ a:hover {
 }
 
 #header {
-  $header_background
   height: 60px;
-  padding-bottom: 33%;
-  background-position: 0 60px;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
   position: relative;
+}
+
+#header:after {
+  content: "";
+  display: block;
+  padding-top: 33%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  $header_background
 }
 
 #header > .inner {
