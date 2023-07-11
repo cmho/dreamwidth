@@ -8,15 +8,15 @@ layerinfo author_name = "veryroundbird";
 ## Page Colors
 ##===============================
 
-set color_page_background = "#222";
+set color_page_background = "#15202B";
 set color_page_link = "#A36F34";
 set color_page_link_active = "#A36F34";
 set color_page_link_hover = "#333";
 set color_page_link_visited = "#A36F34";
-set color_page_text = "#333";
-set color_page_title = "#9C9170";
-set color_canvas_background = "#eee";
-set color_topbar_background = "#222";
+set color_page_text = "#FFF";
+set color_page_title = "#FFF";
+set color_canvas_background = "#15202B";
+set color_topbar_background = "#15202B";
 set color_topbar_border_bottom = "#d1c192";
 set color_topbar_border_top = "#960";
 set color_bottombar_background = "#222";
@@ -69,7 +69,6 @@ set color_module_title = "#9C9170";
 ## Images
 ##===============================
 
-set image_background_canvas_url = "goldleaf/elegantnotebook_bg.png";
 set image_entry_tag = "goldleaf/elegantnotebook_tag.png";
 set image_list_bullet = "goldleaf/elegantnotebook_bullet.png";
 set image_metadata_groups = "goldleaf/elegantnotebook_groups.png";

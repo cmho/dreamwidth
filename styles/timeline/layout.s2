@@ -1177,10 +1177,16 @@ a:hover {
 
 h1#title {
   $page_title_colors
+  $page_title_font
   margin: 0;
   padding: 0;
   font-weight: bold;
   order: 1;
+}
+
+h1#title a {
+  $page_title_colors
+  text-decoration: none;
 }
 
 h2#subtitle,
@@ -1191,7 +1197,7 @@ h2#pagetitle {
 }
 
 h2#pagetitle {
-  $page_title_font
+  $page_subtitle_font
   $page_title_colors
   order: 2;
 }
@@ -1269,12 +1275,14 @@ h2#subtitle {
   margin-top: 1em;
 }
 
+.module-section-one,
 .module-section-two {
-  padding: 20px;
+  padding: 10px;
 }
 
 .module-section-two > .inner {
   columns: 2;
+  gap: 10px;
 }
 
 .module-section-two .module {
