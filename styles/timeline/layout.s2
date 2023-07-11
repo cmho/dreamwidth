@@ -364,22 +364,22 @@ propgroup images {
         allow_other = 1;
 }
 
-    property string[] image_background_header_group {
-        des = "Entry header background image";
-        grouptype = "image";
-        }
-    set image_background_header_group = [ "image_background_header_url", "image_background_header_repeat", "image_background_header_position" ];
-    property string image_background_header_url {
-        grouped = 1;
-        }
-    property string image_background_header_repeat {
-        values = "repeat|tile image|no-repeat|no tile|repeat-x|tile horizontally|repeat-y|tile vertically";
-        grouped = 1;
-        }
-    property string image_background_header_position {
-        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right|cover|cover";
-        grouped = 1;
-        allow_other = 1;
+property string[] image_background_header_group {
+    des = "Header background image";
+    grouptype = "image";
+}
+set image_background_header_group = [ "image_background_header_url", "image_background_header_repeat", "image_background_header_position" ];
+property string image_background_header_url {
+    grouped = 1;
+}
+property string image_background_header_repeat {
+    values = "repeat|tile image|no-repeat|don't tile|repeat-x|tile horizontally|repeat-y|tile vertically";
+    grouped = 1;
+}
+property string image_background_header_position {
+    values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right|cover|cover";
+    grouped = 1;
+    allow_other = 1;
 }
 
     property string image_metadata_mood {
