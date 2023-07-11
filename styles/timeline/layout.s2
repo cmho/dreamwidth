@@ -1149,7 +1149,6 @@ a:hover {
 }
 
 #header {
-  height: 60px;
   position: relative;
 }
 
@@ -1164,10 +1163,12 @@ a:hover {
 }
 
 #header > .inner {
+  height: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 #header .module-wrapper {
