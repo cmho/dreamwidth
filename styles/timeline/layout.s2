@@ -34,27 +34,6 @@ propgroup presentation {
         values = "%|%|px|px";
     }
 
-    property string topbar_width_size {
-        des = "Set the width of the topbar content";
-        size = 3;
-    }
-
-    property string topbar_width_units{
-        des = "Units for topbar content width";
-        values = "%|%|px|px";
-    }
-
-
-    property string bottombar_width_size {
-        des = "Set the width of the bottombar content";
-        size = 3;
-    }
-
-    property string bottombar_width_units{
-        des = "Units for bottombar content width";
-        values = "%|%|px|px";
-    }
-
     property use custom_control_strip_colors;
 
     property use reverse_sortorder_group;
@@ -100,12 +79,8 @@ set userpics_position = "left";
 set use_custom_friend_colors = false;
 set custom_foreground_element = "postername";
 set custom_background_element = "entry_border";
-set primary_width_size ="89";
-set primary_width_units ="%";
-set topbar_width_size ="100";
-set topbar_width_units ="%";
-set bottombar_width_size ="100";
-set bottombar_width_units ="%";
+set primary_width_size ="600";
+set primary_width_units ="px";
 set entry_management_links = "text";
 set comment_management_links = "text";
 set userlite_interaction_links = "text";
@@ -115,7 +90,7 @@ set page_top_image = true;
 set metadata_label_images = true;
 set entry_userpic_style = "small";
 set comment_userpic_style = "small";
-set entry_comment_text_align = "justify";
+set entry_comment_text_align = "left";
 set all_commentsubjects = true;
 set topnav_show = false;
 
@@ -389,42 +364,6 @@ propgroup images {
         allow_other = 1;
 }
 
-    property string[] image_background_topbar_group {
-        des = "Topbar background image";
-        grouptype = "image";
-}
-    set image_background_topbar_group = [ "image_background_topbar_url", "image_background_topbar_repeat", "image_background_topbar_position" ];
-    property string image_background_topbar_url {
-        grouped = 1;
-}
-    property string image_background_topbar_repeat {
-        values = "repeat|tile image|no-repeat|don't tile|repeat-x|tile horizontally|repeat-y|tile vertically";
-        grouped = 1;
-}
-    property string image_background_topbar_position {
-        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right";
-        grouped = 1;
-        allow_other = 1;
-}
-
-    property string[] image_background_bottombar_group {
-        des = "Bottombar background image";
-        grouptype = "image";
-}
-    set image_background_bottombar_group = [ "image_background_bottombar_url", "image_background_bottombar_repeat", "image_background_bottombar_position" ];
-    property string image_background_bottombar_url {
-        grouped = 1;
-}
-    property string image_background_bottombar_repeat {
-        values = "repeat|tile image|no-repeat|don't tile|repeat-x|tile horizontally|repeat-y|tile vertically";
-        grouped = 1;
-}
-    property string image_background_bottombar_position {
-        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right";
-        grouped = 1;
-        allow_other = 1;
-}
-
     property string[] image_background_entry_header_group {
         des = "Entry header background image";
         grouptype = "image";
@@ -438,43 +377,7 @@ propgroup images {
         grouped = 1;
         }
     property string image_background_entry_header_position {
-        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right";
-        grouped = 1;
-        allow_other = 1;
-}
-
-    property string[] image_background_comment_header_group {
-        des = "Comment header background image";
-        grouptype = "image";
-        }
-    set image_background_comment_header_group = [ "image_background_comment_header_url", "image_background_comment_header_repeat", "image_background_comment_header_position" ];
-    property string image_background_comment_header_url {
-        grouped = 1;
-        }
-    property string image_background_comment_header_repeat {
-        values = "repeat|tile image|no-repeat|no tile|repeat-x|tile horizontally|repeat-y|tile vertically";
-        grouped = 1;
-        }
-    property string image_background_comment_header_position {
-        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right";
-        grouped = 1;
-        allow_other = 1;
-}
-
-    property string[] image_background_footer_group {
-        des = "Footer background image";
-        grouptype = "image";
-}
-    set image_background_footer_group = [ "image_background_footer_url", "image_background_footer_repeat", "image_background_footer_position" ];
-    property string image_background_footer_url {
-        grouped = 1;
-}
-    property string image_background_footer_repeat {
-        values = "repeat|tile image|no-repeat|don't tile|repeat-x|tile horizontally|repeat-y|tile vertically";
-        grouped = 1;
-}
-    property string image_background_footer_position {
-        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right";
+        values = "top left|top left|top center|top center|top right|top right|center left|center left|center center|center|center right|center right|bottom left|bottom left|bottom center|bottom center|bottom right|bottom right|cover";
         grouped = 1;
         allow_other = 1;
 }
@@ -967,18 +870,13 @@ function Page::print_default_stylesheet() {
     }
 
     var string canvas_background = generate_background_css ($*image_background_canvas_url, $*image_background_canvas_repeat, $*image_background_canvas_position, $*color_canvas_background);
-    var string topbar_background = generate_background_css ($*image_background_topbar_url, $*image_background_topbar_repeat, $*image_background_topbar_position, $*color_topbar_background);
-    var string bottombar_background = generate_background_css ($*image_background_bottombar_url, $*image_background_bottombar_repeat, $*image_background_bottombar_position, $*color_bottombar_background);
-    var string footer_background = generate_background_css ($*image_background_footer_url, $*image_background_footer_repeat, $*image_background_footer_position, $*color_footer_background);
     var string footer_link_colors = generate_color_css( $*color_footer_link, new Color, new Color );
     var string footer_link_active_colors = generate_color_css( $*color_footer_link_active, new Color, new Color );
     var string footer_link_hover_colors = generate_color_css( $*color_footer_link_hover, new Color, new Color );
     var string footer_link_visited_colors = generate_color_css( $*color_footer_link_visited, new Color, new Color );
 
-    var string entry_background = generate_background_css ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
     var string module_background = generate_background_css ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
-    var string entry_header_background = generate_background_css ($*image_background_entry_header_url, $*image_background_entry_header_repeat, $*image_background_entry_header_position, $*color_entry_title_background);
-
+    
     $*image_metadata_location = generate_image_url($*image_metadata_location);
     $*image_metadata_mood = generate_image_url($*image_metadata_mood);
     $*image_metadata_music = generate_image_url($*image_metadata_music);
