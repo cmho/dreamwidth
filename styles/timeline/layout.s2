@@ -1205,7 +1205,7 @@ h2#subtitle {
 }
 
 .entry {
-  border-bottom: 1px $color_entry_border solid;
+  border-bottom: 1px $*color_entry_border solid;
   position: relative;
   padding: 20px;
   padding-left: 70px;
