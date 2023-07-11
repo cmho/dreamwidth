@@ -419,10 +419,8 @@ property string image_background_header_position {
 }
 
     property use image_background_page_group;
-    property use image_background_module_group;
     property use image_background_header_group;
     property use image_background_header_height;
-    property use image_background_entry_group;
 }
 
 ##===============================
@@ -487,7 +485,7 @@ propgroup modules {
 }
 
 # Explicitly define what sections the layout has available
-set module_layout_sections = "none|(none)|one|Main Module Section|two|Secondary Module Section";
+set module_layout_sections = "none|(none)|one|Header|two|Main Module Section|three|Secondary Module Section";
 
 set grouped_property_override = {
 
@@ -506,13 +504,13 @@ set module_tags_opts_limit = 15;
 set module_tags_opts_type = "cloud";
 set module_customtext_show = true;
 
-set module_pagesummary_section = "two";
-set module_syndicate_section = "two";
+set module_pagesummary_section = "three";
+set module_syndicate_section = "three";
 set module_cuttagcontrols_section = "two";
-set module_active_section = "two";
-set module_subscriptionfilters_section = "two";
-set module_search_section = "two";
-set module_credit_section = "two";
+set module_active_section = "three";
+set module_subscriptionfilters_section = "three";
+set module_search_section = "three";
+set module_credit_section = "three";
 
 set module_time_section = "footer";
 set module_poweredby_section = "footer";
