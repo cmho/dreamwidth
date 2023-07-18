@@ -1251,5 +1251,42 @@ h2#subtitle {
   overflow: hidden;
 }
 
+.entry-management-links {
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.entry-management-links:before {
+    content: "...";
+    display: block;
+    font-size: 30px;
+}
+
+.entry-management-links li {
+    transform: scale(0);
+    transition: 0.3s;
+    padding: 5px;
+    $canvas_background;
+}
+
+.entry-management-links:hover li {
+    transform: scale(1);
+}
+
+.entry-interaction-links {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 10px;
+    justify-content: center;
+}
+
 """;
 }
