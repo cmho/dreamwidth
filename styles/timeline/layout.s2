@@ -166,19 +166,6 @@ propgroup colors {
 }
 
 ##===============================
-## Navigation Module
-##===============================
-
-    property string module_navlinks_section_override {
-       values = "none|(none)|header|Header|one|Main Module Section|two|Secondary Module Section";
-       grouped = 1;
-       }
-
-set grouped_property_override = { "module_navlinks_section" => "module_navlinks_section_override" };
-
-set module_navlinks_section = "header";
-
-##===============================
 ## Fonts
 ##===============================
 
@@ -478,6 +465,14 @@ propgroup modules {
        values = "none|(none)|two|Secondary Module Section";
        grouped = 1;
        }
+    property string module_navlinks_section_override {
+       values = "none|(none)|header|Header|one|Main Module Section|two|Secondary Module Section";
+       grouped = 1;
+       }
+
+    set grouped_property_override = { "module_navlinks_section" => "module_navlinks_section_override" };
+
+    set module_navlinks_section = "header";
 
     property use module_userprofile_group;
     property use module_calendar_group;
