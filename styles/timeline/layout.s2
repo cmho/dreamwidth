@@ -1261,6 +1261,7 @@ h2#subtitle {
     border-radius: 10px;
     overflow: hidden;
     text-align: right;
+    cursor: pointer;
     z-index: 99;
 }
 
@@ -1279,7 +1280,7 @@ h2#subtitle {
 }
 
 .entry-management-links:hover li {
-    transform: scaleY(0);
+    transform: scaleY(1);
 }
 
 .entry-interaction-links {
