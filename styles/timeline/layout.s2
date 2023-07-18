@@ -1253,13 +1253,15 @@ h2#subtitle {
 
 .entry-management-links {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 15px;
     list-style: none;
     margin: 0;
     padding: 0;
     border-radius: 10px;
     overflow: hidden;
+    text-align: right;
+    z-index: 99;
 }
 
 .entry-management-links:before {
@@ -1269,14 +1271,15 @@ h2#subtitle {
 }
 
 .entry-management-links li {
-    transform: scale(0);
+    transform: scaleY(0);
     transition: 0.3s;
     padding: 5px;
+    text-align: left;
     $canvas_background;
 }
 
 .entry-management-links:hover li {
-    transform: scale(1);
+    transform: scaleY(0);
 }
 
 .entry-interaction-links {
