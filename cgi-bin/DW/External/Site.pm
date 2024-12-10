@@ -112,6 +112,8 @@ $domaintosite{"artstation.com"} =
     "artstation" );
 $domaintosite{"ko-fi.com"} =
     DW::External::Site->new( "34", "www.ko-fi.com", "ko-fi.com", "Kofi", "kofi" );
+$domaintosite{"x.com"} =
+	DW::External::Site->new("35", "www.x.com", "x.com", "X", "x");
 
 @all_sites_without_alias = values %domaintosite;
 
@@ -163,6 +165,7 @@ $domaintosite{"artstation"}      = $domaintosite{"artstation.com"};
 $domaintosite{"substack"}        = $domaintosite{"substack.com"};
 $domaintosite{"itch"}            = $domaintosite{"itch.io"};
 $domaintosite{"kofi"}            = $domaintosite{"ko-fi.com"};
+$domaintosite{"x"}				 = $domaintosite{"x.com"};
 
 foreach my $value (@all_sites_without_alias) {
     $idtosite{ $value->{siteid} } = $value;
