@@ -728,15 +728,15 @@ function Page::print_default_stylesheet() {
 	--content_footer_image: $content_footer_image;
 	--content_image: $content_image;
 	
-	--one_column_main_width: $one_column_main_width;
-	--two_column_main_width: $two_column_main_width;
-	--two_column_margin: $two_column_margin;
+	--one_column_main_width: $one_column_main_width%;
+	--two_column_main_width: $two_column_main_width%;
+	--two_column_margin: $two_column_margin%;
 	--two_column_margin_header_right: $two_column_margin_header_right%;
 	--two_column_margin_header_left: $two_column_margin_header_left%;
-	--three_column_main_width: $three_column_main_width;
-	--three_column_main_width_sides: $three_column_main_width_sides;
-	--three_column_margin: $three_column_margin;
-	--three_column_margin_sides: $three_column_margin_sides;
+	--three_column_main_width: $three_column_main_width%;
+	--three_column_main_width_sides: $three_column_main_width_sides%;
+	--three_column_margin: $three_column_margin%;
+	--three_column_margin_sides: $three_column_margin_sides%;
 	--margins_size: $*margins_size;
 	
 	--entry_poster_display: $entry_poster_display;
@@ -903,54 +903,54 @@ q {
     }
     .two-columns #tertiary,
     .two-columns #footer .page-top {
-        width: $two_column_main_width%;
+        width: var(--two_column_main_width);
     }
     .two-columns-left #primary {
-        margin-left: $two_column_margin%;
+        margin-left: var(--two_column_margin);
         margin-right: -100%;
     }
     .two-columns-left #secondary, .three-columns-left #secondary {
-        margin-left: $*margins_size%;
+        margin-left: var(--margins_size);
     }
     .two-columns-left #tertiary,
     .two-columns-left #footer .page-top {
-        margin-left: $two_column_margin%;
-        margin-right: $*margins_size%;
+        margin-left: var(--two_column_margin);
+        margin-right: var(--margins_size);
     }
     .two-columns-right #primary {
-        margin-left: $*margins_size%;
+        margin-left: var(--margins_size);
     }
     .two-columns-right #secondary {
         margin-left: 2%;
     }
     .two-columns-right #tertiary,
     .two-columns-right #footer .page-top {
-        margin-left: $*margins_size%;
-        margin-right: $two_column_margin%;
+        margin-left: var(--margins_size);
+        margin-right: var(--two_column_margin);
     }
     .two-columns .page-reply #postform {
-        width: $two_column_main_width%;
+        width: var(--two_column_main_width);
     }
 
     .three-columns #primary {
-        width: $three_column_main_width%;
+        width: var(--three_column_main_width);
     }
     .three-columns #tertiary {
-        width: $*sidebar_width%;
+        width: var(--sidebar_width%);
         min-width: 200px;
     }
     .three-columns-left #primary {
-        margin-left: $three_column_margin%;
+        margin-left: var(--three_column_margin);
         margin-right: -100%;
     }
     .three-columns-left #footer .page-top {
-        margin-left: $three_column_margin%;
+        margin-left: var(--three_column_margin);
     }
     .three-columns-left #tertiary {
         margin-left: 1%;
     }
     .three-columns-right #primary {
-        margin-left: $*margins_size%;
+        margin-left: var(--margins_size);
     }
     .three-columns-right #secondary {
         margin-left: 1%;
@@ -989,13 +989,15 @@ q {
 }
 
 #title {
-    $page_title_font
-    line-height: 150%;
-    opacity: .5;
+	font-family: $font_page_title, $font_fallback;
+	font-size: $font_page_title_size;
+  line-height: 150%;
+  opacity: .5;
 }
 
 #subtitle {
-    $page_subtitle_font
+	font-family: $font_page_subtitle, $font_fallback;
+	font-size: $font_page_subtitle_size;
     line-height: 150%;
     opacity: .2;
 }
