@@ -704,27 +704,35 @@ function Page::print_default_stylesheet() {
 	--color_footer_link_visited: $*color_footer_link_visited;
 	--color_footer_background: $*color_footer_background;
 	
+	--font_base: $*font_base;
+	--font_fallback: $*font_fallback;
+	--font_base_size: $*font_base_size$*font_base_units;
+	--font_journal_title: $*font_journal_title;
+	--font_journal_title_size: $*font_journal_title_size$*font_journal_title_units;
+	--font_journal_subtitle: $*font_journal_subtitle;
+	--font_journal_subtitle_size: $*font_journal_subtitle_size$*font_journal_subtitle_units;
+	--font_entry_title: $*font_entry_title;
+	--font_entry_title_size: $*font_entry_title_size$*font_entry_title_units;
+	--font_comment_title: $*font_comment_title;
+	--font_comment_title_size: $*font_comment_title_size$*font_comment_title_units;
+	--font_module_text: $*font_module_text;
+	--font_module_text_size: $*font_module_text_size$*font_module_text_units;
+	--font_module_heading: $*font_module_heading;
+	--font_module_heading_size: $*font_module_heading_size$*font_module_heading_units;
+	
 	--calendar_and_form_image: $calendar_and_form_image;
 	--archive_calendar_image: $archive_calendar_image;
 	--content_header_image: $content_header_image;
 	--sidebar_image: $sidebar_image;
 	--userpic_image: $userpic_image;
 	--content_footer_image: $content_footer_image;
-	
-	--page_font: $page_font;
-	--page_title_font: $page_title_font;
-	--page_subtitle_font: $page_subtitle_font;
-	--entry_title_font: $entry_title_font;
-	--comment_title_font: $comment_title_font;
-	--module_font: $module_font;
-	--module_title_font: $module_title_font;
 	--content_image: $content_image;
 	
 	--one_column_main_width: $one_column_main_width;
 	--two_column_main_width: $two_column_main_width;
 	--two_column_margin: $two_column_margin;
-	--two_column_margin_header_right: $two_column_margin_header_right;
-	--two_column_margin_header_left: $two_column_margin_header_left;
+	--two_column_margin_header_right: $two_column_margin_header_right%;
+	--two_column_margin_header_left: $two_column_margin_header_left%;
 	--three_column_main_width: $three_column_main_width;
 	--three_column_main_width_sides: $three_column_main_width_sides;
 	--three_column_margin: $three_column_margin;
@@ -762,23 +770,24 @@ html, body, div, p, span, h1, h2, h3, h4, h5, h6, img, ul, ol, dl, li, dt, dd, b
 body {
     $page_background
     background-attachment: fixed;
-    $page_font
-    color: $*color_page_text;
+		font-family: var(--font_base), var(--font_fallback);
+		font-size: var(--font_base_size);
+    color: var(--color_page_text);
     padding: 0 0 1.667em;
 }
 
 a {
-    $page_link_colors
-    text-decoration: none;
+	color: var(--color_page_link);
+  text-decoration: none;
 }
 a:visited {
-    $page_link_visited_colors
+	color: var(--color_page_link_visited);
 }
 a:hover {
-    $page_link_hover_colors
+  color: var(--color_page_link_hover);
 }
 a:focus,a:active {
-    $page_link_active_colors
+	color: var(--color_page_link_active);
 }
 a:active,a:focus,a:hover {
     text-decoration: underline;
@@ -817,7 +826,7 @@ blockquote li, blockquote dt, blockquote dd {
 }
 
 input, textarea {
-    color: $*color_page_text;
+    color: var(--color_page_text);
     padding: 0.417em;
 }
 
