@@ -1279,9 +1279,10 @@ q {
 
 .header .poster {
     display: block;
-    $entry_poster_display_margin
-    $entry_poster_float
+    margin: var(--entry_poster_display_margin);
+    float: var(--entry_poster_float);
     clear: both;
+		display: var(--entry_poster_display);
     $entry_poster_display
 }
 
@@ -1361,7 +1362,7 @@ q {
 .entry-interaction-links a,
 .comment-management-links a,
 .comment-interaction-links a {
-    $entry_interaction_link_colors
+	color: var(--color_entry_interaction_links);
 }
 
 .entry-management-links li a,
@@ -1533,11 +1534,11 @@ q {
 }
 
 .page-month #primary .entry-title {
-    $page_font
-    margin: 0 .5em 0;
-    padding: 0;
-    float: left;
-    clear: none;
+	font-family: var(--font_page), var(--font_fallback);
+  margin: 0 .5em 0;
+  padding: 0;
+  float: left;
+  clear: none;
 }
 
 .page-month #primary .tag {
@@ -1575,11 +1576,11 @@ q {
 }
 
 .page-tags .tags-container h2 {
-    $entry_title_font
-    $entry_title_colors
-    line-height: 100%;
-    margin: 0;
-    padding: .8333em;
+	font-family: var(--font_entry_title), var(--font_fallback);
+	color: var(--color_entry_title);
+  line-height: 100%;
+  margin: 0;
+  padding: .8333em;
 }
 .page-tags .tags-container .tags_list,
 .page-tags .tags-container .tags_multilevel {
@@ -1617,11 +1618,11 @@ q {
 }
 
 .icons-container h2 {
-    $entry_title_font
-    $entry_title_colors
-    line-height: 100%;
-    margin: 0;
-    padding: .8333em;
+	font-family: var(--font_entry_title), var(--font_fallback);
+	color: var(--color_entry_title);
+  line-height: 100%;
+  margin: 0;
+  padding: .8333em;
 }
 
 .icons-container h2 {
@@ -1709,9 +1710,9 @@ q {
 ***************************************************************************/
 
 .ContextualPopup {
-    background: $*color_page_background;
+    background: var(--color_page_background);
     border-radius: 0;
-    color: $*color_page_text;
+    color: var(--color_page_text);
 }
 .ContextualPopup a,
 .ContextualPopup a:visited {
@@ -1719,10 +1720,10 @@ q {
     font-weight: bold;
 }
 
-.ContextualPopup a { color: $*color_page_link_hover; }
-.ContextualPopup a:visited { color: $*color_page_link_visited; }
-.ContextualPopup a:hover { color: $*color_page_link_hover; }
-.ContextualPopup a:active { color: $*color_page_link_active; }
+.ContextualPopup a { color: var(--color_page_link_hover); }
+.ContextualPopup a:visited { color: var(--color_page_link_visited); }
+.ContextualPopup a:hover { color: var(--color_page_link_hover); }
+.ContextualPopup a:active { color: var(--color_page_link_active); }
 
 /* Borders & Images
 ***************************************************************************/
@@ -1814,7 +1815,7 @@ blockquote {
 .topnav li, .bottomnav li, .page-archive #primary table th, .page-archive #primary table td,
 .page-month #primary dl dt a, .page-tags .tags-container .manage-tags-link a,
 .page-icons .icons-container .manage-icons link a, blockquote {
-    border-color: $border_color;
+    border-color: var(--border_color);
 }
 
 #canvas input, #canvas textarea, #secondary .module, #secondary .module-header,
