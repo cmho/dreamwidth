@@ -700,7 +700,6 @@ function Page::print_default_stylesheet() {
 	--color_entry_interaction_links: $*color_entry_interaction_links;
 	--color_entry_text: $*color_entry_text;
 	--color_entry_title: $*color_entry_title;
-	--color_comment_text: $*color_comment_text;
 	--color_comment_title: $*color_comment_title;
 	--color_module_text: $*color_module_text;
 	--color_module_title: $*color_module_title;
