@@ -724,8 +724,6 @@ function Page::print_default_stylesheet() {
 	--font_entry_title_size: $*font_entry_title_size$*font_entry_title_units;
 	--font_comment_title: $*font_comment_title;
 	--font_comment_title_size: $*font_comment_title_size$*font_comment_title_units;
-	--font_module_title: $*font_module_title;
-	--font_module_title_size: $*font_module_title_size$*font_module_title_units;
 	--font_module_text: $*font_module_text;
 	--font_module_text_size: $*font_module_text_size$*font_module_text_units;
 	--font_module_heading: $*font_module_heading;
