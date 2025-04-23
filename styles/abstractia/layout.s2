@@ -685,6 +685,9 @@ function Page::print_default_stylesheet() {
 	--color_page_background: $*color_page_background;
 	--color_page_border: $*color_page_border;
 	--color_page_border_rgb: $border_rgb_color;
+	--color_page_border_r: $border_r;
+	--color_page_border_g: $border_g;
+	--color_page_border_b: $border_b;
 	--color_page_link: $*color_page_link;
 	--color_page_link_active: $*color_page_link_active;
 	--color_page_link_hover: $*color_page_link_hover;
@@ -1822,14 +1825,14 @@ blockquote {
 #tertiary .module, #tertiary .module-header,
 .entry, .comment, .page-reply #postform, .page-tags .tags-container,
 .page-icons .icons-container {
-    border-color: rgba($border_r,$border_g,$border_b,.35);
+    border-color: rgba(var(--color_page_border_r),var(--color_page_border_g),var(--color_page_border_b),.35);
 }
 
 .entry .header, .comment .header, .has-userpic .userpic,
 .page-archive #primary table, .page-month #primary .month,
 .page-tags .tags-container h2,
 .page-icons .icons-container h2 {
-    border-color: rgba($border_r,$border_g,$border_b,.25);
+    border-color: rgba(var(--color_page_border_r),var(--color_page_border_g),var(--color_page_border_b),.25);
 }
 
 .module-calendar table,
@@ -1840,7 +1843,7 @@ blockquote {
 .page-month #primary dl dt a,
 .page-tags .tags-container .manage-tags-link a,
 .page-icons .icons-container .manage-icons-link a, blockquote {
-    border-color: rgba($border_r,$border_g,$border_b,.15);
+    border-color: rgba(var(--color_page_border_r),var(--color_page_border_g),var(--color_page_border_b),.15);
 }
      """;
 }
