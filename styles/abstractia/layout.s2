@@ -741,8 +741,8 @@ function Page::print_default_stylesheet() {
 	--font_comment_title_size: $comment_title_font_size_var;
 	--font_module_text: $module_font_var;
 	--font_module_text_size: $module_font_size_var;
-	--font_module_heading: $module_heading_font_var;
-	--font_module_heading_size: $module_heading_font_size_var;
+	--font_module_heading: $module_title_font_var;
+	--font_module_heading_size: $module_title_font_size_var;
 	
 	--calendar_and_form_image: $calendar_and_form_image;
 	--archive_calendar_image: $archive_calendar_image;
