@@ -3831,7 +3831,7 @@ function generate_font_css(string font_specific, string font_base, string font_f
     var string font_css = "";
 
     if ($font_specific != "" or $font_base != "" or $font_fallback != "") {
-			$font_famstr = generate_font_string($font_specific, $font_base, $font_fallback);
+			var string font_famstr = generate_font_string($font_specific, $font_base, $font_fallback);
       $font_css = "font-family: $font_famstr;";
     }
 
