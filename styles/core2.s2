@@ -3836,7 +3836,7 @@ function generate_font_css(string font_specific, string font_base, string font_f
     }
 
     if ($font_size != "" and $font_unit != "") {
-			$font_sizestr = generate_font_size_string($font_size, $font_unit);
+			var string font_sizestr = generate_font_size_string($font_size, $font_unit);
       $font_css = $font_css + "font-size: $font_sizestr;";
     }
     return $font_css;
