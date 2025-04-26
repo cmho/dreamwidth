@@ -614,11 +614,17 @@ function Page::print_default_stylesheet() {
 
     var string calendar_and_form_image = generate_background_css ($*image_background_calendar_and_form_url, $*image_background_calendar_and_form_repeat, $*image_background_calendar_and_form_position, $*color_calendar_and_form_background);
     var string archive_calendar_image = generate_background_css ($*image_background_archive_calendar_url, $*image_background_archive_calendar_repeat, $*image_background_archive_calendar_position, $*color_archive_calendar_background);
+		var string archive_calendar_image_var = generate_background_string ($*image_background_archive_calendar_url, $*image_background_archive_calendar_repeat, $*image_background_archive_calendar_position, $*color_archive_calendar_background);
     var string content_header_image = generate_background_css ($*image_background_content_header_url, $*image_background_content_header_repeat, $*image_background_content_header_position, $*color_content_header_background);
+    var string content_header_image_var = generate_background_string ($*image_background_content_header_url, $*image_background_content_header_repeat, $*image_background_content_header_position, $*color_content_header_background);
     var string sidebar_image = generate_background_css ($*image_background_sidebar_url, $*image_background_sidebar_repeat, $*image_background_sidebar_position, $*color_sidebar_background);
+    var string sidebar_image_var = generate_background_string ($*image_background_sidebar_url, $*image_background_sidebar_repeat, $*image_background_sidebar_position, $*color_sidebar_background);
     var string content_image = generate_background_css ($*image_background_content_url, $*image_background_content_repeat, $*image_background_content_position, $*color_content_background);
+    var string content_image_var = generate_background_string ($*image_background_content_url, $*image_background_content_repeat, $*image_background_content_position, $*color_content_background);
     var string userpic_image = generate_background_css ($*image_background_userpic_url, $*image_background_userpic_repeat, $*image_background_userpic_position, $*color_userpic_background);
+    var string userpic_image_var = generate_background_string ($*image_background_userpic_url, $*image_background_userpic_repeat, $*image_background_userpic_position, $*color_userpic_background);
     var string content_footer_image = generate_background_css ($*image_background_content_footer_url, $*image_background_content_footer_repeat, $*image_background_content_footer_position, $*color_content_footer_background);
+    var string content_footer_image_var = generate_background_string ($*image_background_content_footer_url, $*image_background_content_footer_repeat, $*image_background_content_footer_position, $*color_content_footer_background);
     var Color border_color = $*color_page_border;
     var Color border_rgb_color = $*color_page_border->lighter(70);
     var int border_r = $border_rgb_color->red();
@@ -1015,14 +1021,14 @@ q {
 }
 
 #title {
-	font-family: var(--font_page_title), var(--font_fallback);
+	font-family: var(--font_page_title);
 	font-size: var(--font_page_title_size);
   line-height: 150%;
   opacity: .5;
 }
 
 #subtitle {
-	font-family: var(--font_page_subtitle), var(--font_fallback);
+	font-family: var(--font_page_subtitle);
 	font-size: var(--font_page_subtitle_size);
     line-height: 150%;
     opacity: .2;
@@ -1052,7 +1058,7 @@ q {
 
 #secondary .module, #tertiary .module {
 	color: var(--color_module_text);
-	color: var(--font_module_text), var(--font_fallback);
+	font-family: var(--font_module_text);
     margin-bottom: 1.667em;
 }
 
@@ -1081,7 +1087,7 @@ q {
 
 #secondary .module-header,
 #tertiary .module-header {
-	font-family: var(--font_module_title), var(--font_fallback);
+	font-family: var(--font_module_title);
 	font-size: var(--font_module_title_size);
 	color: var(--color_module_title);
   font-weight: normal;
@@ -1220,8 +1226,10 @@ q {
 ************************************************/
 
 .entry,.comment {
-    $entry_colors
-    padding: .833em;
+	background: var(--color_entry_background);
+	color: var(--color_entry_text),
+	border-color: var(--color_entry_border);
+  padding: .833em;
 }
 
 .entry a,.comment a {
@@ -1241,7 +1249,7 @@ q {
 }
 
 .entry-title {
-	color: var(--font_entry_title), var(--font_fallback);
+	color: var(--font_entry_title);
 	font-size: var(--font_entry_title_size);
 }
 
@@ -1254,7 +1262,7 @@ q {
 }
 
 .comment-title {
-	color: var(--font_comment_title), var(--font_fallback);
+	color: var(--font_comment_title);
 	font-size: var(--font_comment_title_size);
 }
 
@@ -1267,31 +1275,31 @@ q {
 }
 
 .comment-posted {
-    font-weight:bold;
+  font-weight: bold;
 }
 
 .datetime {
-    font-size: .85em
+  font-size: .85em
 }
 
 .access-filter img,.restrictions img {
-    max-width: 1.25em;
-    max-height: 1.25em;
-    vertical-align: middle;
+  max-width: 1.25em;
+  max-height: 1.25em;
+  vertical-align: middle;
 }
 
 .entry .footer,.comment .footer {
-    padding: 0 1.25em;
-    clear: both;
-    overflow: hidden;
+  padding: 0 1.25em;
+  clear: both;
+  overflow: hidden;
 }
 
 .entry .userpic img, .comment .userpic img {display:block;}
 
 .has-userpic .userpic {
-    $userpic_css
-    padding: 10px;
-    clear: both;
+	background: var(--userpic_image);
+  padding: 10px;
+  clear: both;
 }
 
 .header .poster {
@@ -1300,6 +1308,7 @@ q {
     float: var(--entry_poster_float);
     clear: both;
 		display: var(--entry_poster_display);
+		
     $entry_poster_display
 }
 
@@ -1551,7 +1560,7 @@ q {
 }
 
 .page-month #primary .entry-title {
-	font-family: var(--font_page), var(--font_fallback);
+	font-family: var(--font_page);
   margin: 0 .5em 0;
   padding: 0;
   float: left;
@@ -1593,7 +1602,7 @@ q {
 }
 
 .page-tags .tags-container h2 {
-	font-family: var(--font_entry_title), var(--font_fallback);
+	font-family: var(--font_entry_title);
 	color: var(--color_entry_title);
   line-height: 100%;
   margin: 0;
@@ -1601,28 +1610,28 @@ q {
 }
 .page-tags .tags-container .tags_list,
 .page-tags .tags-container .tags_multilevel {
-    margin-left: 0;
-    padding-left: 0;
-    list-style-position: inside;
+  margin-left: 0;
+  padding-left: 0;
+  list-style-position: inside;
 }
 .page-tags .tags-container .tags_cloud ul {
-    margin-left: 0;
-    padding-left: 0;
-    text-align: center;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
 }
 .page-tags .tags-container .tags_list ul,
 .page-tags .tags-container .tags_multilevel ul {
-    padding-left: 1.15em;
+  padding-left: 1.15em;
 }
 .page-tags .tags-container .tags_cloud li {
-    display: inline;
+  display: inline;
 }
 .page-tags .tags-container .manage-tags-link {
-    margin: 1em 0;
-    text-align: right;
+  margin: 1em 0;
+  text-align: right;
 }
 .page-tags .tags-container .manage-tags-link a {
-    padding: .833em;
+  padding: .833em;
 }
 
 
@@ -1631,11 +1640,11 @@ q {
 ************************************************/
 
 .icons-container {
-    padding: .833em;
+  padding: .833em;
 }
 
 .icons-container h2 {
-	font-family: var(--font_entry_title), var(--font_fallback);
+	font-family: var(--font_entry_title);
 	color: var(--color_entry_title);
   line-height: 100%;
   margin: 0;
@@ -1643,31 +1652,31 @@ q {
 }
 
 .icons-container h2 {
-    text-align: left;
+  text-align: left;
 }
 
 .sorting-options ul {
-    text-align: center;
-    margin-left: 0;
-    padding-left: 0;
+  text-align: center;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .sorting-options ul li {
-    display: inline;
+  display: inline;
 }
 
 .icons-container .icon {
-    margin: 0 1em 1em 0;
-    text-align: left;
+  margin: 0 1em 1em 0;
+  text-align: left;
 }
 
 .icon-image {
-    float: left;
-    clear: left;
-    margin-bottom: .25em;
-    min-width: 100px;
-    padding-right: .5em;
-    }
+  float: left;
+  clear: left;
+  margin-bottom: .25em;
+  min-width: 100px;
+  padding-right: .5em;
+}
 
 .icon-info { min-height: 100px; }
 
@@ -1748,32 +1757,32 @@ q {
 .entry .header,.comment .header,.bottomcomment,
 .page-tags .tags-container h2,
 .page-icons .icons-container h2 {
-    $content_header_image
+  background: var(--content_header_image);
 }
 
 .entry, .comment, .page-reply #postform,
 .page-tags .tags-container,
 .page-icons .icons-container {
-    $content_image
+  background: var(--content_image);
 }
 
 .entry .footer, .comment .footer, .page-tags .tags-container .manage-tags-link a, blockquote, .module-navlinks .current, .page-icons .icons-container .manage-icons-link a {
-    $content_footer_image
+  background: var(--content_footer_image);
 }
 
 .has-userpic .userpic {
-    $userpic_image
+  background: var(--userpic_image);
 }
 
 #secondary .module, #secondary .module-header,
 #tertiary .module, #tertiary .module-header,
 .topnav li, .bottomnav li, .page-month #primary .month,
 .page-month #primary dl dt a {
-    $sidebar_image
+  background: var(--sidebar_image);
 }
 
 .page-archive #primary table {
-    $archive_calendar_image
+	background: var(--archive_calendar_image);
 }
 
 input, textarea,
@@ -1781,7 +1790,7 @@ input, textarea,
 .module-calendar th,
 .page-archive #primary tr,
 .page-archive #primary th {
-    $calendar_and_form_image
+	background: var(--calendar_and_form_image);
 }
 
 #canvas input, #canvas textarea,
