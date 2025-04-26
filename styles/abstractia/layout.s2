@@ -736,7 +736,7 @@ function Page::print_default_stylesheet() {
 	--font_journal_subtitle: $page_subtitle_font_var;
 	--font_journal_subtitle_size: $page_subtitle_font_size_var;
 	--font_entry_title: $entry_title_font_var;
-	--font_entry_title_size: $entry_title_size_font_var;
+	--font_entry_title_size: $entry_title_font_size_var;
 	--font_comment_title: $comment_title_font_var;
 	--font_comment_title_size: $comment_title_font_size_var;
 	--font_module_text: $module_text_font_var;
