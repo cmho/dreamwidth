@@ -544,7 +544,9 @@ function Page::print_default_stylesheet() {
     var string large_media_query = generate_large_media_query();
 
     var string page_background = generate_background_css ($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position, $*color_page_background);
+		var string page_background_short = generate_background_string($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position);
     var string header_background = generate_background_css ($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position, $*color_header_background);
+		var string header_background_short = generate_background_string ($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position, $*color_header_background);
     if ($*image_background_header_height > 0) {
         $header_background = """
             $header_background
@@ -552,13 +554,16 @@ function Page::print_default_stylesheet() {
     }
 
     var string footer_background = generate_background_css( "", "", "", $*color_footer_background );
+		var string footer_background_short = generate_background_string( "", "", "", $*color_footer_background );
     var string footer_link_colors = generate_color_css( $*color_footer_link, new Color, new Color );
     var string footer_link_active_colors = generate_color_css( $*color_footer_link_active, new Color, new Color );
     var string footer_link_hover_colors = generate_color_css( $*color_footer_link_hover, new Color, new Color );
     var string footer_link_visited_colors = generate_color_css( $*color_footer_link_visited, new Color, new Color );
 
     var string entry_background = generate_background_css ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
+		var string entry_background_short = generate_background_string ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
     var string module_background = generate_background_css ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
+		var string module_background_short = generate_background_string ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
 
     var string page_colors = generate_color_css($*color_page_text, $*color_page_background, $*color_page_border);
     var string entry_colors = generate_color_css($*color_entry_text, $*color_entry_background, $*color_entry_border);
@@ -670,10 +675,11 @@ function Page::print_default_stylesheet() {
 ************************************************/	
 
 :root {
-	--image_background_page: generate_background_string($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position);
-	--image_background_header: generate_background_string($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position);
+	--image_background_page: $page_background_short;
+	--image_background_header: $header_background_short;
 	--image_background_header_height: $*image_background_header_height;
-	--image_background_entry: generate_background_string($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position);
+	--image_background_entry: $entry_background_short;
+	--image_background_module: $module_background_short;
 	
 	--color_page_text: $*color_page_text;
 	--color_page_title: $*color_page_title;
