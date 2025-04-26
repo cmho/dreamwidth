@@ -1841,7 +1841,7 @@ blockquote {
 .topnav li, .bottomnav li, .page-archive #primary table th, .page-archive #primary table td,
 .page-month #primary dl dt a, .page-tags .tags-container .manage-tags-link a,
 .page-icons .icons-container .manage-icons link a, blockquote {
-    border-color: var(--border_color);
+    border-color: var(--color_page_border);
 }
 
 #canvas input, #canvas textarea, #secondary .module, #secondary .module-header,
