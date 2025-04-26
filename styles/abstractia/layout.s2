@@ -739,8 +739,8 @@ function Page::print_default_stylesheet() {
 	--font_entry_title_size: $entry_title_font_size_var;
 	--font_comment_title: $comment_title_font_var;
 	--font_comment_title_size: $comment_title_font_size_var;
-	--font_module_text: $module_text_font_var;
-	--font_module_text_size: $module_text_font_size_var;
+	--font_module_text: $module_font_var;
+	--font_module_text_size: $module_font_size_var;
 	--font_module_heading: $module_heading_font_var;
 	--font_module_heading_size: $module_heading_font_size_var;
 	
