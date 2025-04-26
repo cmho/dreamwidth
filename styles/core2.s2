@@ -3734,6 +3734,26 @@ function generate_image_url ( string image_path ) : string
     return $image_path;
 }
 
+function generate_background_string (
+    string background_image,
+    string background_image_repeat,
+    string background_image_position,
+    Color background_color
+) : string
+"Take the values for the properties in a background image group and output the appropriate
+background CSS value."
+{
+    var string color = ($background_color.as_string != "") ? $background_color.as_string : "transparent";
+    var string background_string = "$color";
+
+    $background_image = generate_image_url ($background_image);
+    if ($background_image != "") {
+        $background_string = $background_string + " url($background_image) $background_image_repeat $background_image_position";
+    }
+
+    return $background_string;
+}
+
 function generate_background_css (
     string background_image,
     string background_image_repeat,
@@ -3743,17 +3763,9 @@ function generate_background_css (
 "Take the values for the properties in a background image group and output the appropriate
 line of CSS for inclusion in your stylesheet."
 {
-    var string color = ($background_color.as_string != "") ? $background_color.as_string : "transparent";
-    var string background_css = "background: $color";
+    var string background_string = background_string($background_image, $background_image_repeat, $background_image_position, $background_color);
 
-    $background_image = generate_image_url ($background_image);
-    if ($background_image != "") {
-        $background_css = $background_css + " url($background_image) $background_image_repeat $background_image_position";
-    }
-
-    $background_css = $background_css + ";";
-
-    return $background_css;
+    return "background: $background_string;";
 }
 
 function generate_color_css (Color text_color, Color background_color, Color border_color) : string
@@ -3772,42 +3784,60 @@ function generate_color_css (Color text_color, Color background_color, Color bor
     return $color_css;
 }
 
+function generate_font_string(string font_specific, string font_base, string font_fallback) : string
+{
+  var string font_css = "";
+
+
+  if ($font_specific != "" or $font_base != "" or $font_fallback != "") {
+      $font_css = "";
+
+      if ($font_specific != "") {
+          $font_css = $font_css + "$font_specific";
+          if ($font_base != "") {
+              $font_css = $font_css + ", $font_base";
+          }
+
+          if ($font_fallback != "") {
+              $font_css = $font_css + ", $font_fallback";
+          }
+
+      } elseif ($font_specific == "" and ($font_base != "" or $font_fallback != "")) {
+          if ($font_base != "") {
+              $font_css = $font_css + "$font_base";
+
+              if ($font_fallback != "") {
+                  $font_css = $font_css + ", $font_fallback";
+              }
+          } else {
+              $font_css = $font_css + "$font_fallback";
+          }
+      }
+  }
+  return $font_css;
+}
+
+function generate_font_size_string(string font_size, string font_unit) : string
+{
+	var string font_string = "";
+  if ($font_size != "" and $font_unit != "") {
+      $font_string = "$font_size$font_unit";
+  }
+	return $font_string;
+}
+
 function generate_font_css(string font_specific, string font_base, string font_fallback, string font_size, string font_unit) : string
 {
     var string font_css = "";
 
-
     if ($font_specific != "" or $font_base != "" or $font_fallback != "") {
-        $font_css = "font-family: ";
-
-        if ($font_specific != "") {
-            $font_css = $font_css + "$font_specific";
-            if ($font_base != "") {
-                $font_css = $font_css + ", $font_base";
-            }
-
-            if ($font_fallback != "") {
-                $font_css = $font_css + ", $font_fallback";
-            }
-
-        } elseif ($font_specific == "" and ($font_base != "" or $font_fallback != "")) {
-            if ($font_base != "") {
-                $font_css = $font_css + "$font_base";
-
-                if ($font_fallback != "") {
-                    $font_css = $font_css + ", $font_fallback";
-                }
-            } else {
-                $font_css = $font_css + "$font_fallback";
-            }
-        }
-
-        $font_css = $font_css + "; ";
+			$font_famstr = generate_font_string($font_specific, $font_base, $font_fallback);
+      $font_css = "font-family: $font_famstr;";
     }
 
-
     if ($font_size != "" and $font_unit != "") {
-        $font_css = $font_css + "font-size: $font_size$font_unit;";
+			$font_sizestr = generate_font_size_string($font_size, $font_unit);
+      $font_css = $font_css + "font-size: $font_sizestr;";
     }
     return $font_css;
 }

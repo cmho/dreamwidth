@@ -670,15 +670,10 @@ function Page::print_default_stylesheet() {
 ************************************************/	
 
 :root {
-	--image_background_page_url: url($*image_background_page_url);
-	--image_background_page_repeat: $*image_background_page_repeat;
-	--image_background_page_position: $*image_background_page_position;
-	--image_background_header_url: url($*image_background_header_url);
-	--image_background_header_repeat: $*image_background_header_repeat;
+	--image_background_page: generate_background_string($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position);
+	--image_background_header: generate_background_string($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position);
 	--image_background_header_height: $*image_background_header_height;
-	--image_background_entry_url: url($*image_background_entry_url);
-	--image_background_entry_repeat: $*image_background_entry_repeat;
-	--image_background_entry_position: $*image_background_entry_position;
+	--image_background_entry: generate_background_string($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position);
 	
 	--color_page_text: $*color_page_text;
 	--color_page_title: $*color_page_title;
@@ -716,18 +711,18 @@ function Page::print_default_stylesheet() {
 	--font_base: $*font_base;
 	--font_fallback: $*font_fallback;
 	--font_base_size: $*font_base_size$*font_base_units;
-	--font_journal_title: $*font_journal_title;
-	--font_journal_title_size: $*font_journal_title_size$*font_journal_title_units;
-	--font_journal_subtitle: $*font_journal_subtitle;
-	--font_journal_subtitle_size: $*font_journal_subtitle_size$*font_journal_subtitle_units;
-	--font_entry_title: $*font_entry_title;
-	--font_entry_title_size: $*font_entry_title_size$*font_entry_title_units;
-	--font_comment_title: $*font_comment_title;
-	--font_comment_title_size: $*font_comment_title_size$*font_comment_title_units;
-	--font_module_text: $*font_module_text;
-	--font_module_text_size: $*font_module_text_size$*font_module_text_units;
-	--font_module_heading: $*font_module_heading;
-	--font_module_heading_size: $*font_module_heading_size$*font_module_heading_units;
+	--font_journal_title: generate_font_string($*font_journal_title, $*font_base, $*font_fallback);
+	--font_journal_title_size: generate_font_size_string($*font_journal_title_size, $*font_journal_title_units);
+	--font_journal_subtitle: generate_font_string($*font_journal_subtitle, $*font_base, $*font_fallback);
+	--font_journal_subtitle_size: generate_font_size_string($*font_journal_subtitle_size, $*font_journal_subtitle_units);
+	--font_entry_title: generate_font_string($*font_entry_title, $*font_base, $*font_fallback);
+	--font_entry_title_size: generate_font_size_string($*font_entry_title_size, $*font_entry_title_units);
+	--font_comment_title: generate_font_string($*font_comment_title, $*font_base, $*font_fallback);
+	--font_comment_title_size: generate_font_size_string($*font_comment_title_size, $*font_comment_title_units);
+	--font_module_text: generate_font_string($*font_module_text, $*font_base, $*font_fallback);
+	--font_module_text_size: generate_font_size_string($*font_module_text_size, $*font_module_text_units);
+	--font_module_heading: generate_font_string($*font_module_heading, $*font_base, $*font_fallback);
+	--font_module_heading_size: generate_font_size_string($*font_module_heading_size, $*font_module_heading_units);
 	
 	--calendar_and_form_image: $calendar_and_form_image;
 	--archive_calendar_image: $archive_calendar_image;
@@ -777,9 +772,7 @@ html, body, div, p, span, h1, h2, h3, h4, h5, h6, img, ul, ol, dl, li, dt, dd, b
 }
 
 body {
-	background-image: var(--image_background_page_url);
-	background-repeat: var(--image_background_page_repeat);
-	background-position: var(--image_background_page_position);
+	background: var(--image_background_page);
   background-attachment: fixed;
 	font-family: var(--font_base), var(--font_fallback);
 	font-size: var(--font_base_size);
