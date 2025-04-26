@@ -544,9 +544,9 @@ function Page::print_default_stylesheet() {
     var string large_media_query = generate_large_media_query();
 
     var string page_background = generate_background_css ($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position, $*color_page_background);
-		var string page_background_short = generate_background_string ($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position, $*color_page_background);
+		var string page_background_var = generate_background_string ($*image_background_page_url, $*image_background_page_repeat, $*image_background_page_position, $*color_page_background);
     var string header_background = generate_background_css ($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position, $*color_header_background);
-		var string header_background_short = generate_background_string ($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position, $*color_header_background);
+		var string header_background_var = generate_background_string ($*image_background_header_url, $*image_background_header_repeat, $*image_background_header_position, $*color_header_background);
     if ($*image_background_header_height > 0) {
         $header_background = """
             $header_background
@@ -554,16 +554,16 @@ function Page::print_default_stylesheet() {
     }
 
     var string footer_background = generate_background_css( "", "", "", $*color_footer_background );
-		var string footer_background_short = generate_background_string( "", "", "", $*color_footer_background );
+		var string footer_background_var = generate_background_string( "", "", "", $*color_footer_background );
     var string footer_link_colors = generate_color_css( $*color_footer_link, new Color, new Color );
     var string footer_link_active_colors = generate_color_css( $*color_footer_link_active, new Color, new Color );
     var string footer_link_hover_colors = generate_color_css( $*color_footer_link_hover, new Color, new Color );
     var string footer_link_visited_colors = generate_color_css( $*color_footer_link_visited, new Color, new Color );
 
     var string entry_background = generate_background_css ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
-		var string entry_background_short = generate_background_string ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
+		var string entry_background_var = generate_background_string ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
     var string module_background = generate_background_css ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
-		var string module_background_short = generate_background_string ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
+		var string module_background_var = generate_background_string ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
 
     var string page_colors = generate_color_css($*color_page_text, $*color_page_background, $*color_page_border);
     var string entry_colors = generate_color_css($*color_entry_text, $*color_entry_background, $*color_entry_border);
@@ -591,12 +591,26 @@ function Page::print_default_stylesheet() {
     var string module_link_visited_colors = generate_color_css($*color_module_link_visited, new Color, new Color);
 
     var string page_font = generate_font_css("", $*font_base, $*font_fallback, $*font_base_size, $*font_base_units);
+		var string page_font_var = generate_font_string("", $*font_base, $*font_fallback);
+		var string page_font_size_var = generate_font_size_string($*font_base_size, $*font_base_units);
     var string page_title_font = generate_font_css($*font_journal_title, $*font_base, $*font_fallback, $*font_journal_title_size, $*font_journal_title_units);
+		var string page_title_font_var = generate_font_string($*font_journal_title, $*font_base, $*font_fallback);
+		var string page_title_font_var = generate_font_size_string($*font_journal_title_size, $*font_journal_title_units);
     var string page_subtitle_font = generate_font_css($*font_journal_subtitle, $*font_base, $*font_fallback, $*font_journal_subtitle_size, $*font_journal_subtitle_units);
+		var string page_subtitle_font_var = generate_font_string($*font_journal_subtitle, $*font_base, $*font_fallback);
+		var string page_subtitle_font_size_var = generate_font_size_string($*font_journal_subtitle_size, $*font_journal_subtitle_units);
     var string entry_title_font = generate_font_css($*font_entry_title, $*font_base, $*font_fallback, $*font_entry_title_size, $*font_entry_title_units);
+		var string entry_title_font_var = generate_font_string($*font_entry_title, $*font_base, $*font_fallback);
+		var string entry_title_font_size_var = generate_font_size_string($*font_entry_title_size, $*font_entry_title_units);
     var string comment_title_font = generate_font_css($*font_comment_title, $*font_base, $*font_fallback, $*font_comment_title_size, $*font_comment_title_units);
+		var string comment_title_font_var = generate_font_string($*font_comment_title, $*font_base, $*font_fallback);
+		var string comment_title_font_size_var = generate_font_size_string($*font_comment_title_size, $*font_entry_title_units);
     var string module_font = generate_font_css($*font_module_text, $*font_base, $*font_fallback, $*font_module_text_size, $*font_module_text_units);
+		var string module_font_var = generate_font_string($*font_module_text, $*font_base, $*font_fallback);
+		var string module_font_size_var = generate_font_size_string($*font_module_text_size, $*font_module_text_units);
     var string module_title_font = generate_font_css($*font_module_heading, $*font_base, $*font_fallback, $*font_module_heading_size, $*font_module_heading_units);
+		var string module_title_font_var = generate_font_string($*font_module_heading, $*font_base, $*font_fallback);
+		var string module_title_font_size_var = generate_font_size_string($*font_module_heading_size, $*font_module_heading_units);
 
     var string calendar_and_form_image = generate_background_css ($*image_background_calendar_and_form_url, $*image_background_calendar_and_form_repeat, $*image_background_calendar_and_form_position, $*color_calendar_and_form_background);
     var string archive_calendar_image = generate_background_css ($*image_background_archive_calendar_url, $*image_background_archive_calendar_repeat, $*image_background_archive_calendar_position, $*color_archive_calendar_background);
@@ -675,11 +689,11 @@ function Page::print_default_stylesheet() {
 ************************************************/	
 
 :root {
-	--image_background_page: $page_background_short;
-	--image_background_header: $header_background_short;
+	--image_background_page: $page_background_var;
+	--image_background_header: $header_background_var;
 	--image_background_header_height: $*image_background_header_height;
-	--image_background_entry: $entry_background_short;
-	--image_background_module: $module_background_short;
+	--image_background_entry: $entry_background_var;
+	--image_background_module: $module_background_var;
 	
 	--color_page_text: $*color_page_text;
 	--color_page_title: $*color_page_title;
@@ -717,18 +731,18 @@ function Page::print_default_stylesheet() {
 	--font_base: $*font_base;
 	--font_fallback: $*font_fallback;
 	--font_base_size: $*font_base_size$*font_base_units;
-	--font_journal_title: generate_font_string($*font_journal_title, $*font_base, $*font_fallback);
-	--font_journal_title_size: generate_font_size_string($*font_journal_title_size, $*font_journal_title_units);
-	--font_journal_subtitle: generate_font_string($*font_journal_subtitle, $*font_base, $*font_fallback);
-	--font_journal_subtitle_size: generate_font_size_string($*font_journal_subtitle_size, $*font_journal_subtitle_units);
-	--font_entry_title: generate_font_string($*font_entry_title, $*font_base, $*font_fallback);
-	--font_entry_title_size: generate_font_size_string($*font_entry_title_size, $*font_entry_title_units);
-	--font_comment_title: generate_font_string($*font_comment_title, $*font_base, $*font_fallback);
-	--font_comment_title_size: generate_font_size_string($*font_comment_title_size, $*font_comment_title_units);
-	--font_module_text: generate_font_string($*font_module_text, $*font_base, $*font_fallback);
-	--font_module_text_size: generate_font_size_string($*font_module_text_size, $*font_module_text_units);
-	--font_module_heading: generate_font_string($*font_module_heading, $*font_base, $*font_fallback);
-	--font_module_heading_size: generate_font_size_string($*font_module_heading_size, $*font_module_heading_units);
+	--font_journal_title: $page_title_font_var;
+	--font_journal_title_size: $page_title_font_size_var;
+	--font_journal_subtitle: $page_subtitle_font_var;
+	--font_journal_subtitle_size: $page_subtitle_font_size_var;
+	--font_entry_title: $entry_title_font_var;
+	--font_entry_title_size: $entry_title_size_font_var;
+	--font_comment_title: $comment_title_font_var;
+	--font_comment_title_size: $comment_title_font_size_var;
+	--font_module_text: $module_text_font_var;
+	--font_module_text_size: $module_text_font_size_var;
+	--font_module_heading: $module_heading_font_var;
+	--font_module_heading_size: $module_heading_font_size_var;
 	
 	--calendar_and_form_image: $calendar_and_form_image;
 	--archive_calendar_image: $archive_calendar_image;
