@@ -595,7 +595,7 @@ function Page::print_default_stylesheet() {
 		var string page_font_size_var = generate_font_size_string($*font_base_size, $*font_base_units);
     var string page_title_font = generate_font_css($*font_journal_title, $*font_base, $*font_fallback, $*font_journal_title_size, $*font_journal_title_units);
 		var string page_title_font_var = generate_font_string($*font_journal_title, $*font_base, $*font_fallback);
-		var string page_title_font_var = generate_font_size_string($*font_journal_title_size, $*font_journal_title_units);
+		var string page_title_font_size_var = generate_font_size_string($*font_journal_title_size, $*font_journal_title_units);
     var string page_subtitle_font = generate_font_css($*font_journal_subtitle, $*font_base, $*font_fallback, $*font_journal_subtitle_size, $*font_journal_subtitle_units);
 		var string page_subtitle_font_var = generate_font_string($*font_journal_subtitle, $*font_base, $*font_fallback);
 		var string page_subtitle_font_size_var = generate_font_size_string($*font_journal_subtitle_size, $*font_journal_subtitle_units);
