@@ -113,11 +113,6 @@ function print_stylesheet () {
     var string medium_media_query = generate_medium_media_query();
 
     var string header_inner_background = generate_background_string ($*image_background_header_inner_url, $*image_background_header_inner_repeat, $*image_background_header_inner_position, $*color_header_inner_background);
-    if ($*image_background_header_inner_height > 0) {
-        $header_inner_background = """
-						background: var(--header_inner_background);
-            height: """ + $*image_background_header_inner_height + """px;""";
-    }
 
 var string userpic_css = "";
     if ($*userpics_position == "right") {
@@ -205,6 +200,7 @@ var string navlinks_css = "";
 	--header_border_width: $*header_border_width;
 	--color_header_border: $*color_header_border;
 	--header_border: var(--header_border_width) var(--header_border_style) var(--color_header_border);
+	--image_background_header_inner_height: $*image_background_header_inner_heightpx;
 	
 	--color_page_text: $*color_page_text;
 	--color_page_background: $*color_page_background;
@@ -252,6 +248,8 @@ a:hover { text-decoration: none; }
 
 #header > .inner:first-child {
     $header_inner_background
+		background: var(--header_inner_background);
+		height: var(--image_background_header_inner_height);
     margin: 0; padding: 0;
     padding-top: 1px; /*really freaking annoying workaround for margin stupidity */
     margin-top: -1px;
