@@ -196,7 +196,7 @@ var string navlinks_css = "";
 	--header_title_position: $*header_title_position;
 	--header_title_spacing_top: $*header_title_spacing_top;
 	--header_title_spacing_side: $*header_title_spacing_side;
-	--header_inner_background: $*image_background_header_inner_url;
+	--header_inner_background: $header_inner_background;
 	--header_border_style: $*header_border_style;
 	--header_border_width: $*header_border_width;
 	--color_header_border: $*color_header_border;
