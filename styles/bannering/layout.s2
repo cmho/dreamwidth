@@ -196,7 +196,7 @@ var string navlinks_css = "";
 	--header_title_position: $*header_title_position;
 	--header_title_spacing_top: $*header_title_spacing_top;
 	--header_title_spacing_side: $*header_title_spacing_side;
-	--header_inner_background: $header_inner_background;
+	--header_inner_background: $*image_background_header_inner_url;
 	--header_border_style: $*header_border_style;
 	--header_border_width: $*header_border_width;
 	--color_header_border: $*color_header_border;
@@ -248,7 +248,6 @@ a:hover { text-decoration: none; }
     padding: 0; }
 
 #header > .inner:first-child {
-    $header_inner_background
 		background: var(--header_inner_background);
 		height: var(--header_inner_height);
     margin: 0; padding: 0;
