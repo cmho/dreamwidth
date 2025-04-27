@@ -153,10 +153,9 @@ var string header_border_css = "";
         $header_border_css = "#header { border: var(--header_border) }";
     }
 
-var string header_spacing_css = "";
-	$header_spacing_css = "#title { margin-top: var(--header_title_spacing_top); }";
+var string header_spacing_css = "#title { margin-top: var(--header_title_spacing_top); }";
     if ($*header_title_position == "left") {
-        $header_spacing_css "$header_spacing_css#header > .inner:first-child { padding-left: var(--header_title_spacing_side); } ";
+        $header_spacing_css = "$header_spacing_css#header > .inner:first-child { padding-left: var(--header_title_spacing_side); } ";
     }
     if ($*header_title_position == "right") {
         $header_spacing_css = "$header_spacing_css#header > .inner:first-child { padding-right: var(--header_title_spacing_side); } ";
