@@ -184,7 +184,8 @@ var string navlinks_css = "";
     else {
         $navlinks_css = "";
     }
-
+		
+		var string header_inner_height = $*image_background_header_inner_height+"px";
 
     """
 
@@ -200,7 +201,7 @@ var string navlinks_css = "";
 	--header_border_width: $*header_border_width;
 	--color_header_border: $*color_header_border;
 	--header_border: var(--header_border_width) var(--header_border_style) var(--color_header_border);
-	--image_background_header_inner_height: $*image_background_header_inner_heightpx;
+	--header_inner_height: $header_inner_height;
 	
 	--color_page_text: $*color_page_text;
 	--color_page_background: $*color_page_background;
@@ -249,7 +250,7 @@ a:hover { text-decoration: none; }
 #header > .inner:first-child {
     $header_inner_background
 		background: var(--header_inner_background);
-		height: var(--image_background_header_inner_height);
+		height: var(--header_inner_height);
     margin: 0; padding: 0;
     padding-top: 1px; /*really freaking annoying workaround for margin stupidity */
     margin-top: -1px;
